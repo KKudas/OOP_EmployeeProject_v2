@@ -12,60 +12,38 @@ package employee.version2;
 public class Employee {
     private int empID;
     private String empName;
-    EmployeeDate empBirthDate = new EmployeeDate();
-    EmployeeDate empHiredDate = new EmployeeDate();
+    private Date empBirthDate;
+    private Date empHiredDate;
 
     public Employee() {
     }
-    
-    /**
-     *
-     * @param empName
-     * @param BirthDate
-     */
-    public Employee(String empName, String BirthDate) {
-        this.empName = empName;
-        empBirthDate.arrangeBirthDate(BirthDate);
-    }
 
-    public Employee(int empID, String empName, String DateHired, String BirthDate) {
+    public Employee(int empID, String empName, Date empBirthDate, Date empHiredDate) {
         this.empID = empID;
         this.empName = empName;
-        empBirthDate.arrangeBirthDate(BirthDate);
-        empHiredDate.arrangeHiredDate(DateHired);
+        this.empBirthDate = empBirthDate;
+        this.empHiredDate = empHiredDate;
+    }
+
+    public Employee(String empName, Date empBirthDate) {
+        this.empName = empName;
+        this.empBirthDate = empBirthDate;
     }
 
     public int getEmpID() {
         return empID;
     }
 
-    public void setEmpID(int empID) {
-        this.empID = empID;
-    }
-
     public String getEmpName() {
         return empName;
     }
 
-    public void setEmpName(String empName) {
-        this.empName = empName;
+    public String getEmpBirthDate() {
+        return empBirthDate.getDate();
     }
 
-    public EmployeeDate getEmpBirthDate() {
-        return empBirthDate;
+    public String getEmpHiredDate() {
+        return empHiredDate.getDate();
     }
 
-    public void setEmpBirthDate(EmployeeDate empBirthDate) {
-        this.empBirthDate = empBirthDate;
-    }
-
-    public EmployeeDate getEmpHiredDate() {
-        return empHiredDate;
-    }
-
-    public void setEmpHiredDate(EmployeeDate empHiredDate) {
-        this.empHiredDate = empHiredDate;
-    }
-    
-    
 }

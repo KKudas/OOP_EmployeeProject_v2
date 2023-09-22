@@ -17,17 +17,13 @@ public class CommissionEmployee extends Employee{
     public CommissionEmployee() {
     }
 
-    public CommissionEmployee(String empName, String BirthDate) {
+    public CommissionEmployee(String empName, Date BirthDate) {
         super(empName, BirthDate);
     }
 
-    public CommissionEmployee(int empID, String empName, String DateHired, String BirthDate, double totalSales) {
+    public CommissionEmployee(int empID, String empName, Date DateHired, Date BirthDate, double totalSales) {
         super(empID, empName, DateHired, BirthDate);
         this.totalSales = totalSales;
-    }
-
-    public CommissionEmployee(int empID, String empName, String DateHired, String BirthDate) {
-        super(empID, empName, DateHired, BirthDate);
     }
     
 
@@ -41,22 +37,25 @@ public class CommissionEmployee extends Employee{
     
     
     public double computeSalary(){
+        double rate;
         if (this.totalSales < 50000){
-            return 0.5 * this.totalSales;
+            rate = 0.05;
         } else if (this.totalSales >= 50000 && this.totalSales < 100000){
-            return 0.20 * this.totalSales;
+            rate = 0.20;
         } else if (this.totalSales >= 100000 && this.totalSales < 500000){
-            return 0.30 * this.totalSales;
+            rate = 0.30;
         } else {
-            return 0.50 * this.totalSales;
+            rate = 0.50;
         }
+        return rate * this.totalSales;
     }
+
     
     public void displayInfo(double salary){
         System.out.println("Employee ID: " + super.getEmpID());
         System.out.println("Employee Name: " + super.getEmpName());
-        System.out.println("Date Hired: " + super.empHiredDate.getEmpHiredDate());
-        System.out.println("Birth Date: " + super.empBirthDate.getEmpBirthDate());
+        System.out.println("Date Hired: " + super.getEmpHiredDate());
+        System.out.println("Birth Date: " + super.getEmpBirthDate());
         System.out.println("Total Sales: " + this.totalSales);
         System.out.println("Salary: " + salary);
     }

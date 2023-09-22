@@ -17,11 +17,11 @@ public class PieceWorkerEmployee extends Employee{
     public PieceWorkerEmployee() {
     }
 
-    public PieceWorkerEmployee(String empName, String BirthDate) {
+    public PieceWorkerEmployee(String empName, Date BirthDate) {
         super(empName, BirthDate);
     }
 
-    public PieceWorkerEmployee(int empID, String empName, String DateHired, String BirthDate, int totalPiecesFinished, float ratePerPiece) {
+    public PieceWorkerEmployee(int empID, String empName, Date DateHired, Date BirthDate, int totalPiecesFinished, float ratePerPiece) {
         super(empID, empName, DateHired, BirthDate);
         this.totalPiecesFinished = totalPiecesFinished;
         this.ratePerPiece = ratePerPiece;
@@ -56,8 +56,8 @@ public class PieceWorkerEmployee extends Employee{
     public void displayInfo(double salary){
         System.out.println("Employee ID: " + super.getEmpID());
         System.out.println("Employee Name: " + super.getEmpName());
-        System.out.println("Date Hired: " + super.empHiredDate.getEmpHiredDate());
-        System.out.println("Birth Date: " + super.empBirthDate.getEmpBirthDate());
+        System.out.println("Date Hired: " + super.getEmpHiredDate());
+        System.out.println("Birth Date: " + super.getEmpBirthDate());
         System.out.println("Total Pieces Finished: " + this.totalPiecesFinished);
         System.out.println("Rate Per Hour: " + this.ratePerPiece);
         System.out.println("Salary: " + salary);
